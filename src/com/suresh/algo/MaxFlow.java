@@ -5,6 +5,7 @@ import com.suresh.algo.Exceptions.InvalidNodeException;
 import com.suresh.algo.Graph.Graph;
 import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
+import edu.princeton.cs.introcs.Stopwatch;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,41 +24,47 @@ T.S.M.Peiris (w1742124)
 
  */
 
-public class NetworkGraphTest {
+public class MaxFlow {
 
     private Graph graph;
 
     public static void main(String[] args) {
 
-        NetworkGraphTest networkGraphTest = new NetworkGraphTest();
-
-        // Initialize new graph
-        networkGraphTest.newGraph();
+        MaxFlow maxFlow = new MaxFlow();
+        maxFlow.newGraph();
 
         int option = 0;
         
         do {
-            StdOut.println("Please make a selection...");
+            StdOut.println("\nPlease make a selection...");
             StdOut.println("Press 1 to add new edges");
             StdOut.println("Press 2 to print matrix");
             StdOut.println("Press 3 to print max flow");
+            StdOut.println("Press 4 to update an edge");
+            StdOut.println("Press 5 to delete an edge");
             option = StdIn.readInt();
             switch (option){
                 case 1:
-                    networkGraphTest.addEdges();
+                    maxFlow.addEdges();
                     break;
                 case 2:
-                    networkGraphTest.printNetworkGraph();
+                    maxFlow.printNetworkGraph();
                     break;
                 case 3:
                     try {
-                        networkGraphTest.getMaxFlow();
+                        maxFlow.getMaxFlow();
                     } catch (InvalidNodeException | InvalidCapacityException e) {
                         System.out.println("ERROR: " + e.getMessage());
                     }
                     break;
+                case 4:
+                    maxFlow.updateEdge();
+                    break;
+                case 5:
+                    maxFlow.deleteEdge();
+                    break;
             }
-        } while(option > 0 && option < 5);
+        } while (option > 0 && option < 6);
     }
 
     // New network graph
@@ -91,11 +98,51 @@ public class NetworkGraphTest {
         }
     }
 
+    // Delete edge
+    public void deleteEdge() {
+        StdOut.println("Enter the node 1: ");
+        int node1 = StdIn.readInt();
+
+        StdOut.println("Enter the node 2: ");
+        int node2 = StdIn.readInt();
+
+        try {
+            graph.setCapacity(node1, node2, 0);
+            System.out.println("Successfully deleted.");
+        } catch (InvalidNodeException e) {
+            e.printStackTrace();
+        } catch (InvalidCapacityException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Update edge
+    public void updateEdge() {
+        StdOut.println("Enter the node 1: ");
+        int node1 = StdIn.readInt();
+
+        StdOut.println("Enter the node 2: ");
+        int node2 = StdIn.readInt();
+
+        StdOut.println("Enter the updated capacity: ");
+        int bandwidth = StdIn.readInt();
+
+        try {
+            graph.setCapacity(node1, node2, bandwidth);
+            System.out.println("Successfully updated.");
+        } catch (InvalidNodeException e) {
+            e.printStackTrace();
+        } catch (InvalidCapacityException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private List<Integer> tempPath = new ArrayList<>();
     private List<Integer> tempCapacities = new ArrayList<>();
 
     private void getMaxFlow() throws InvalidNodeException, InvalidCapacityException {
+        Stopwatch timer = new Stopwatch();
         int maxFlow = 0;
         System.out.println("Paths:\n==========================================");
 
@@ -116,6 +163,7 @@ public class NetworkGraphTest {
         } while( path.get(path.size()-1) != -1 );
 
         System.out.println("\nMax flow is: " + maxFlow+"\n");
+        StdOut.println("Elapsed time = " + timer.elapsedTime());
     }
 
     private void sendFlow(List<Integer> nodes, int flow) throws InvalidNodeException, InvalidCapacityException {
