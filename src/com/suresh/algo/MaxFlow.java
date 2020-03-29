@@ -11,19 +11,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-
-/*
-
-The following code will be used to test the data structure which I've created to simulate the network graph
-
-Please run the program and executuve the commands and check.
-
-T.S.M.Peiris (w1742124)
-
-2018435
-
- */
-
 public class MaxFlow {
 
     private Graph graph;
@@ -166,12 +153,14 @@ public class MaxFlow {
         StdOut.println("Elapsed time = " + timer.elapsedTime());
     }
 
+    // Send a data flow across the graph
     private void sendFlow(List<Integer> nodes, int flow) throws InvalidNodeException, InvalidCapacityException {
-        for(int i=1; i<nodes.size(); i++){
+        for(int i = 1; i<nodes.size(); i++){
             updateGraph(nodes.get(i-1), nodes.get(i), flow);
         }
     }
 
+    // Update the graph when a flow is being sent
     private void updateGraph(int n1, int n2, int capacity) throws InvalidNodeException, InvalidCapacityException {
         //Reduce capacity from forward side
         int edgeCapacityTW = graph.getCapacity(n1, n2);
@@ -182,9 +171,11 @@ public class MaxFlow {
         graph.setCapacity(n2, n1, (edgeCapacityBW+capacity));
     }
 
+    // Get path from source to sink
     private List<Integer> getPath(int vertex) throws InvalidNodeException, InvalidCapacityException {
         tempPath.add(vertex);
         if(vertex == (graph.getVertices()-1) || vertex == -1){
+            // Return the path
             return tempPath;
         }
         List<Integer> connections = graph.getPositiveConnections(vertex);
@@ -192,26 +183,30 @@ public class MaxFlow {
         int highestCapCon = 0;
         int chosenCon = 0;
         for(Integer connection : connections){
-            //choose if it doesnt contain in the current path
+            // 1. Choose if it doesnt contain in the current path
             if(!tempPath.contains(connection)){
-                //choose if it has connections towards positive side
+                // 2. choose if it has connections towards positive side
                 if(graph.getPositiveConnections(connection).size() != 0 || connection == (graph.getVertices()-1)){
                     chosenConnections.add(connection);
                 }
             }
         }
+        // Having the filtered node in chosenConnections List
         for(Integer connection : chosenConnections){
             int capacity = graph.getCapacity(vertex, connection);
+            // Choose the edge with highest capacity (Greedy approach)
             if(capacity > highestCapCon){
                 highestCapCon = capacity;
                 chosenCon = connection;
             }
         }
+        // Adding the capacities to temporary array
         tempCapacities.add(graph.getCapacity(vertex, chosenCon));
         if(chosenConnections.size() > 0){
+            // If the array contains children call the method recursively
             return getPath(chosenCon);
         } else {
-            //The terminator
+            // If it doesnt contain terminate the method
             return getPath(-1);
         }
 

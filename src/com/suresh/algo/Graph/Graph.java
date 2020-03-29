@@ -16,18 +16,6 @@ public class Graph {
     public Graph(int vertices) {
         this.graph = new int[vertices][vertices];
         this.vertices = vertices;
-        /*
-        STATIC TEST DATA
-        this.vertices = 6;
-        this.graph = new int[][]{
-                {0, 10, 8, 0, 0, 0 },
-                {0, 0, 5, 5, 0, 0},
-                {0, 4, 0, 0, 10, 0},
-                {0, 0, 7, 0, 6, 3},
-                {0, 0, 0, 10, 0, 14},
-                {0, 0, 0, 0, 0, 0}
-        };
-         */
     }
 
     // Print the graph (For debug purposes)
@@ -67,7 +55,7 @@ public class Graph {
         return nodes;
     }
 
-    // Get the list of positive connected nodes for a given node
+    // Get the list of connected nodes which is greater than a given node
     public List<Integer> getPositiveConnections(int node) throws InvalidNodeException {
         List<Integer> nodes = new ArrayList<>();
         if (node >= vertices || node < 0) {
@@ -106,5 +94,4 @@ public class Graph {
             throw new InvalidNodeException("Your node value has to be within the range of the number of vertices");
         }
     }
-
 }
