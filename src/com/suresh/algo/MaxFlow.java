@@ -3,6 +3,7 @@ package com.suresh.algo;
 import com.suresh.algo.Exceptions.InvalidCapacityException;
 import com.suresh.algo.Exceptions.InvalidNodeException;
 import com.suresh.algo.Graph.Graph;
+import edu.princeton.cs.introcs.In;
 import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 import edu.princeton.cs.introcs.Stopwatch;
@@ -29,6 +30,7 @@ public class MaxFlow {
             StdOut.println("Press 3 to print max flow");
             StdOut.println("Press 4 to update an edge");
             StdOut.println("Press 5 to delete an edge");
+            StdOut.println("Press 6 import data set");
             option = StdIn.readInt();
             switch (option){
                 case 1:
@@ -50,8 +52,28 @@ public class MaxFlow {
                 case 5:
                     maxFlow.deleteEdge();
                     break;
+                case 6:
+                    maxFlow.importDataset(args);
+                    break;
             }
-        } while (option > 0 && option < 6);
+        } while (option > 0 && option < 7);
+    }
+
+
+    public void importDataset(String args[]) {
+        In in = new In(args[0]);
+        int[][] importedGraph = new int[graph.getVertices()][graph.getVertices()];
+
+        String[] line = in.readAllLines();
+
+        for (int i = 0; i < importedGraph.length; i++) {
+            for (int x = 0; x < importedGraph.length; x++) {
+                importedGraph[i][x] = Integer.valueOf(line[i].split(" ")[x]);
+            }
+        }
+        graph.setGraph(importedGraph);
+        System.out.println("Successfully imported!");
+
     }
 
     // New network graph

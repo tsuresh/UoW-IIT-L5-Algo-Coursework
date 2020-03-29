@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66223a56-8d6d-4621-b4a4-7a2ccc5ee4e3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Network_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_4.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CWK1_5SENG001W/com/suresh/algo/Graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CWK1_5SENG001W/com/suresh/algo/Graph/Graph.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CWK1_5SENG001W/com/suresh/algo/NetworkGraphTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" afterDir="false" />
     </list>
@@ -23,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
+            <state relative-caret-position="-1278">
+              <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#6707#6708#0" expanded="true" />
@@ -37,10 +39,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="21" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="21" />
+            <state relative-caret-position="286">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#816#817#0" expanded="true" />
                 <element signature="e#2859#2860#0" expanded="true" />
                 <element signature="e#2890#2891#0" expanded="true" />
                 <element signature="e#2950#2951#0" expanded="true" />
@@ -63,13 +67,15 @@
     <findStrings>
       <find>band</find>
       <find>System.out.println</find>
-      <find>print</find>
       <find>vertices</find>
       <find>getconnec</find>
       <find>getconn</find>
       <find>edges</find>
       <find>nodes</find>
       <find>upda</find>
+      <find>Graph</find>
+      <find>new Gra</find>
+      <find>print</find>
     </findStrings>
     <replaceStrings>
       <replace>StdOut.println</replace>
@@ -88,8 +94,12 @@
         <option value="$PROJECT_DIR$/src/com/suresh/algo/Exceptions/InvalidBandwidthException.java" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/Graph/CustomGraph.java" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/NetworkGraph.java" />
-        <option value="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/NetworkGraphTest.java" />
+        <option value="$PROJECT_DIR$/Network_1.txt" />
+        <option value="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" />
+        <option value="$PROJECT_DIR$/Network_2.txt" />
+        <option value="$PROJECT_DIR$/Network_3.txt" />
+        <option value="$PROJECT_DIR$/Network_4.txt" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" />
       </list>
     </option>
@@ -141,7 +151,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/suresh/algo/Graph" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -153,12 +163,13 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.suresh.algo.Exceptions" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/com/suresh/algo/Graph" />
       <recent name="$PROJECT_DIR$/libs" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.suresh.algo.Exceptions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -177,7 +188,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.suresh.algo.MaxFlow" />
       <module name="CWK1_5SENG001W" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/Network_1.txt" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -203,15 +214,31 @@
       <workItem from="1584548997703" duration="6064000" />
       <workItem from="1584559303374" duration="90000" />
       <workItem from="1584561673210" duration="45000" />
-      <workItem from="1585423167766" duration="18532000" />
+      <workItem from="1585423167766" duration="23275000" />
     </task>
+    <task id="LOCAL-00001" summary="Added stopwatch and shit">
+      <created>1585509932669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585509932670</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Optimizations and code cleanup">
+      <created>1585513070995</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585513070995</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24731000" />
+    <option name="totallyTimeSpent" value="29474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -222,7 +249,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5048193" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -246,6 +273,14 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added stopwatch and shit" />
+    <MESSAGE value="Optimizations and code cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimizations and code cleanup" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/Graph/Graph.java">
@@ -281,12 +316,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Network_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_2.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="21" />
+        <state relative-caret-position="286">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#816#817#0" expanded="true" />
             <element signature="e#2859#2860#0" expanded="true" />
             <element signature="e#2890#2891#0" expanded="true" />
             <element signature="e#2950#2951#0" expanded="true" />
@@ -295,10 +342,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Network_4.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_3.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="162" column="41" lean-forward="true" selection-start-line="162" selection-start-column="41" selection-end-line="162" selection-end-column="41" />
+        <state relative-caret-position="-1278">
+          <caret line="74" column="50" selection-start-line="74" selection-start-column="50" selection-end-line="74" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#6707#6708#0" expanded="true" />

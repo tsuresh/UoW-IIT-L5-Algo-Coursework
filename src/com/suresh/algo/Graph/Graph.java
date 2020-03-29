@@ -28,6 +28,10 @@ public class Graph {
         }
     }
 
+    public void setGraph(int[][] graph) {
+        this.graph = graph;
+    }
+
     // Add new edge
     // N1 = Node 1 value
     // N2 = Node 2 value
