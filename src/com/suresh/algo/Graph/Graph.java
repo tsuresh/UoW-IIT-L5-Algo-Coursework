@@ -10,11 +10,11 @@ public class Graph {
 
     private int edges;
     private int vertices;
-    private int[][] graph;
+    private float[][] graph;
 
     // Generate graph (NxM)
     public Graph(int vertices) {
-        this.graph = new int[vertices][vertices];
+        this.graph = new float[vertices][vertices];
         this.vertices = vertices;
     }
 
@@ -28,7 +28,11 @@ public class Graph {
         }
     }
 
-    public void setGraph(int[][] graph) {
+    public float[][] getGraph() {
+        return graph;
+    }
+
+    public void setGraph(float[][] graph) {
         this.graph = graph;
     }
 
@@ -36,7 +40,7 @@ public class Graph {
     // N1 = Node 1 value
     // N2 = Node 2 value
     // bW = Capacity
-    public void setCapacity(int n1, int n2, int bW) throws InvalidNodeException, InvalidCapacityException {
+    public void setCapacity(int n1, int n2, float bW) throws InvalidNodeException, InvalidCapacityException {
         validateNodes(n1, n2);
         if(bW < 0){
             throw new InvalidCapacityException("Your capacity value has to be greater than 0");
@@ -74,7 +78,7 @@ public class Graph {
     }
 
     // Get the capacity between two nodes
-    public int getCapacity(int n1, int n2) throws InvalidNodeException {
+    public float getCapacity(int n1, int n2) throws InvalidNodeException {
         validateNodes(n1, n2);
         return graph[n1][n2];
     }

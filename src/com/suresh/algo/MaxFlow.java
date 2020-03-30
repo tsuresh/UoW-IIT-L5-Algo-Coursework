@@ -8,13 +8,12 @@ import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 import edu.princeton.cs.introcs.Stopwatch;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class MaxFlow {
 
     private Graph graph;
+    private int maxFlow = 0;
 
     public static void main(String[] args) {
 
@@ -22,7 +21,7 @@ public class MaxFlow {
         maxFlow.newGraph();
 
         int option = 0;
-        
+
         do {
             StdOut.println("\nPlease make a selection...");
             StdOut.println("Press 1 to add new edges");
@@ -59,10 +58,9 @@ public class MaxFlow {
         } while (option > 0 && option < 7);
     }
 
-
     public void importDataset(String args[]) {
         In in = new In(args[0]);
-        int[][] importedGraph = new int[graph.getVertices()][graph.getVertices()];
+        float[][] importedGraph = new float[graph.getVertices()][graph.getVertices()];
 
         String[] line = in.readAllLines();
 
@@ -146,92 +144,81 @@ public class MaxFlow {
         }
     }
 
-
-    private List<Integer> tempPath = new ArrayList<>();
-    private List<Integer> tempCapacities = new ArrayList<>();
-
     private void getMaxFlow() throws InvalidNodeException, InvalidCapacityException {
         Stopwatch timer = new Stopwatch();
-        int maxFlow = 0;
-        System.out.println("Paths:\n==========================================");
 
-        tempPath.clear();
-        tempCapacities.clear();
-        List<Integer> path = getPath(0);
+        System.out.println("\nMax flow is: " + fordFulk(0, graph.getVertices() - 1) + "\n");
 
-        do {
-            Collections.sort(tempCapacities);
-            int lowest = tempCapacities.get(0);
-            System.out.println("Path: " + path + ", Flow: " + lowest);
-            maxFlow += lowest;
-            sendFlow(path, lowest);
-            tempPath.clear();
-            tempCapacities.clear();
-            path = getPath(0);
-
-        } while( path.get(path.size()-1) != -1 );
-
-        System.out.println("\nMax flow is: " + maxFlow+"\n");
         StdOut.println("Elapsed time = " + timer.elapsedTime());
     }
 
-    // Send a data flow across the graph
-    private void sendFlow(List<Integer> nodes, int flow) throws InvalidNodeException, InvalidCapacityException {
-        for(int i = 1; i<nodes.size(); i++){
-            updateGraph(nodes.get(i-1), nodes.get(i), flow);
-        }
-    }
-
     // Update the graph when a flow is being sent
-    private void updateGraph(int n1, int n2, int capacity) throws InvalidNodeException, InvalidCapacityException {
+    private void updateGraph(int n1, int n2, float capacity) throws InvalidNodeException, InvalidCapacityException {
         //Reduce capacity from forward side
-        int edgeCapacityTW = graph.getCapacity(n1, n2);
+        float edgeCapacityTW = graph.getCapacity(n1, n2);
         graph.setCapacity(n1, n2, (edgeCapacityTW-capacity));
-
         //Add capacity to back side ;)
-        int edgeCapacityBW = graph.getCapacity(n2, n1);
+        float edgeCapacityBW = graph.getCapacity(n2, n1);
         graph.setCapacity(n2, n1, (edgeCapacityBW+capacity));
     }
 
-    // Get path from source to sink
-    private List<Integer> getPath(int vertex) throws InvalidNodeException, InvalidCapacityException {
-        tempPath.add(vertex);
-        if(vertex == (graph.getVertices()-1) || vertex == -1){
-            // Return the path
-            return tempPath;
+    // Find child nodes
+    private boolean bredthFirst(int source, int sink, int[] adjacents) {
+        //Initiate a queue
+        Queue<Integer> queue = new LinkedList<>();
+        boolean[] visited = new boolean[graph.getVertices()];
+        //Set visited array to default value : false
+        for (int i = 0; i < visited.length; i++) {
+            visited[i] = false;
         }
-        List<Integer> connections = graph.getPositiveConnections(vertex);
-        List<Integer> chosenConnections = new ArrayList<>();
-        int highestCapCon = 0;
-        int chosenCon = 0;
-        for(Integer connection : connections){
-            // 1. Choose if it doesnt contain in the current path
-            if(!tempPath.contains(connection)){
-                // 2. choose if it has connections towards positive side
-                if(graph.getPositiveConnections(connection).size() != 0 || connection == (graph.getVertices()-1)){
-                    chosenConnections.add(connection);
+        //Add initial value to queue
+        queue.add(source);
+        //Set a adjacent value to a negative value, cuz there's no parent
+        adjacents[source] = -1;
+        //Mark the node as visited
+        visited[source] = true;
+        //Search in the path and find child nodes
+        while (queue.size() != 0) {
+            int u = queue.poll();
+            for (int v = 0; v < graph.getVertices(); v++) {
+                if (!visited[v] && graph.getGraph()[u][v] > 0) {
+                    queue.add(v);
+                    adjacents[v] = u;
+                    visited[v] = true;
                 }
             }
         }
-        // Having the filtered node in chosenConnections List
-        for(Integer connection : chosenConnections){
-            int capacity = graph.getCapacity(vertex, connection);
-            // Choose the edge with highest capacity (Greedy approach)
-            if(capacity > highestCapCon){
-                highestCapCon = capacity;
-                chosenCon = connection;
-            }
-        }
-        // Adding the capacities to temporary array
-        tempCapacities.add(graph.getCapacity(vertex, chosenCon));
-        if(chosenConnections.size() > 0){
-            // If the array contains children call the method recursively
-            return getPath(chosenCon);
-        } else {
-            // If it doesnt contain terminate the method
-            return getPath(-1);
-        }
+        return (visited[sink]);
+    }
 
+    private int fordFulk(int source, int sink) throws InvalidNodeException, InvalidCapacityException {
+        int[] adjacent = new int[graph.getVertices()];
+        maxFlow = 0;
+        while (bredthFirst(source, sink, adjacent)) {
+            float minPathCapacity = Float.MAX_VALUE;
+            //Get the minimum capacity of a path
+            for (int i = sink; i != source; i = adjacent[i]) {
+                int adjIndex = adjacent[i];
+                minPathCapacity = Math.min(minPathCapacity, graph.getCapacity(adjIndex, i));
+            }
+            //Update the graph for each path iteration
+            List<Integer> path = new ArrayList<>();
+            for (int i = sink; i != source; i = adjacent[i]) {
+                int adjIndex = adjacent[i];
+                path.add(i);
+                updateGraph(adjIndex, i, minPathCapacity);
+            }
+
+            //Print path for each iteration [Consumes memory]
+            //Remove in order to make more efficient
+            path.add(0);
+            Collections.reverse(path);
+            System.out.println(path + ", Capacity flow: " + minPathCapacity);
+
+            //Increase the max flow variable
+            maxFlow += minPathCapacity;
+        }
+        return maxFlow;
     }
 
     // Print the network graph
