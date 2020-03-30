@@ -63,20 +63,6 @@ public class Graph {
         return nodes;
     }
 
-    // Get the list of connected nodes which is greater than a given node
-    public List<Integer> getPositiveConnections(int node) throws InvalidNodeException {
-        List<Integer> nodes = new ArrayList<>();
-        if (node >= vertices || node < 0) {
-            throw new InvalidNodeException("Your node value has to be within the range of the number of vertices");
-        }
-        for (int i = 0; i < graph[node].length; i++) {
-            if (graph[node][i] > 0 && i > node) {
-                nodes.add(i);
-            }
-        }
-        return nodes;
-    }
-
     // Get the capacity between two nodes
     public float getCapacity(int n1, int n2) throws InvalidNodeException {
         validateNodes(n1, n2);

@@ -163,8 +163,8 @@ public class MaxFlow {
     }
 
     // Find child nodes
-    private boolean bredthFirst(int source, int sink, int[] adjacents) {
-        //Initiate a queue
+    private boolean depthFirst(int source, int sink, int[] adjacents) {
+        //Initiate a linkedlist
         Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[graph.getVertices()];
         //Set visited array to default value : false
@@ -179,12 +179,12 @@ public class MaxFlow {
         visited[source] = true;
         //Search in the path and find child nodes
         while (queue.size() != 0) {
-            int u = queue.poll();
-            for (int v = 0; v < graph.getVertices(); v++) {
-                if (!visited[v] && graph.getGraph()[u][v] > 0) {
-                    queue.add(v);
-                    adjacents[v] = u;
-                    visited[v] = true;
+            int front = queue.poll();
+            for (int i = 0; i < graph.getVertices(); i++) {
+                if (!visited[i] && graph.getGraph()[front][i] > 0) {
+                    queue.add(i);
+                    adjacents[i] = front;
+                    visited[i] = true;
                 }
             }
         }
@@ -192,29 +192,27 @@ public class MaxFlow {
     }
 
     private int fordFulk(int source, int sink) throws InvalidNodeException, InvalidCapacityException {
-        int[] adjacent = new int[graph.getVertices()];
+        int[] nodes = new int[graph.getVertices()];
         maxFlow = 0;
-        while (bredthFirst(source, sink, adjacent)) {
+        while (depthFirst(source, sink, nodes)) {
             float minPathCapacity = Float.MAX_VALUE;
             //Get the minimum capacity of a path
-            for (int i = sink; i != source; i = adjacent[i]) {
-                int adjIndex = adjacent[i];
+            for (int i = sink; i != source; i = nodes[i]) {
+                int adjIndex = nodes[i];
                 minPathCapacity = Math.min(minPathCapacity, graph.getCapacity(adjIndex, i));
             }
-            //Update the graph for each path iteration
+            //Update the capacities for each node after each iteration
             List<Integer> path = new ArrayList<>();
-            for (int i = sink; i != source; i = adjacent[i]) {
-                int adjIndex = adjacent[i];
+            for (int i = sink; i != source; i = nodes[i]) {
+                int adjIndex = nodes[i];
                 path.add(i);
                 updateGraph(adjIndex, i, minPathCapacity);
             }
-
             //Print path for each iteration [Consumes memory]
             //Remove in order to make more efficient
             path.add(0);
             Collections.reverse(path);
             System.out.println(path + ", Capacity flow: " + minPathCapacity);
-
             //Increase the max flow variable
             maxFlow += minPathCapacity;
         }
