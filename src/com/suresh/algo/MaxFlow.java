@@ -8,7 +8,8 @@ import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 import edu.princeton.cs.introcs.Stopwatch;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class MaxFlow {
 
@@ -202,17 +203,17 @@ public class MaxFlow {
                 minPathCapacity = Math.min(minPathCapacity, graph.getCapacity(adjIndex, i));
             }
             //Update the capacities for each node after each iteration
-            List<Integer> path = new ArrayList<>();
+            //List<Integer> path = new ArrayList<>();
             for (int i = sink; i != source; i = nodes[i]) {
                 int adjIndex = nodes[i];
-                path.add(i);
+                //path.add(i);
                 updateGraph(adjIndex, i, minPathCapacity);
             }
             //Print path for each iteration [Consumes memory]
             //Remove in order to make more efficient
-            path.add(0);
-            Collections.reverse(path);
-            System.out.println(path + ", Capacity flow: " + minPathCapacity);
+            //path.add(0);
+            //Collections.reverse(path);
+            //System.out.println(path + ", Capacity flow: " + minPathCapacity);
             //Increase the max flow variable
             maxFlow += minPathCapacity;
         }

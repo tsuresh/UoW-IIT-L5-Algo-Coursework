@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66223a56-8d6d-4621-b4a4-7a2ccc5ee4e3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Network_5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Network_8.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Network_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network_3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Network_3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Network_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Network_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CWK1_5SENG001W/com/suresh/algo/Graph/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CWK1_5SENG001W/com/suresh/algo/Graph/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,12 +28,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="190" column="25" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="25" />
+            <state relative-caret-position="978">
+              <caret line="199" column="46" selection-start-line="199" selection-start-column="46" selection-end-line="199" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7666#7667#0" expanded="true" />
-                <element signature="e#7701#7702#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,12 +40,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="1050">
               <caret line="82" column="29" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2791#2792#0" expanded="true" />
-                <element signature="e#2819#2820#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,8 +52,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Network_2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="165">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Network_4.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="705">
+              <caret line="47" column="133" selection-start-line="47" selection-start-column="133" selection-end-line="47" selection-end-column="133" />
             </state>
           </provider>
         </entry>
@@ -78,6 +90,7 @@
       <find>print</find>
       <find>new Gra</find>
       <find>first</find>
+      <find>depth</find>
     </findStrings>
     <replaceStrings>
       <replace>StdOut.println</replace>
@@ -98,11 +111,15 @@
         <option value="$PROJECT_DIR$/src/com/suresh/algo/NetworkGraph.java" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/NetworkGraphTest.java" />
         <option value="$PROJECT_DIR$/Network_1.txt" />
-        <option value="$PROJECT_DIR$/Network_3.txt" />
-        <option value="$PROJECT_DIR$/Network_4.txt" />
-        <option value="$PROJECT_DIR$/Network_2.txt" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java" />
         <option value="$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java" />
+        <option value="$PROJECT_DIR$/Network_2.txt" />
+        <option value="$PROJECT_DIR$/Network_3.txt" />
+        <option value="$PROJECT_DIR$/Network_4.txt" />
+        <option value="$PROJECT_DIR$/Network_5.txt" />
+        <option value="$PROJECT_DIR$/Network_6.txt" />
+        <option value="$PROJECT_DIR$/Network_7.txt" />
+        <option value="$PROJECT_DIR$/Network_8.txt" />
       </list>
     </option>
   </component>
@@ -115,7 +132,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="CatdeaLogs" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,8 +164,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="CatdeaLogs" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -165,6 +182,9 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/com/suresh/algo/Graph" />
@@ -190,7 +210,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="com.suresh.algo.MaxFlow" />
       <module name="CWK1_5SENG001W" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/Network_1.txt" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/Network_8.txt" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
@@ -216,7 +236,8 @@
       <workItem from="1584548997703" duration="6064000" />
       <workItem from="1584559303374" duration="90000" />
       <workItem from="1584561673210" duration="45000" />
-      <workItem from="1585423167766" duration="33452000" />
+      <workItem from="1585423167766" duration="35346000" />
+      <workItem from="1585632255291" duration="118000" />
     </task>
     <task id="LOCAL-00001" summary="Added stopwatch and shit">
       <created>1585509932669</created>
@@ -246,17 +267,24 @@
       <option name="project" value="LOCAL" />
       <updated>1585545530876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="final final ;)">
+      <created>1585549101640</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585549101640</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39651000" />
+    <option name="totallyTimeSpent" value="41663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26037195" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -265,7 +293,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26506025" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45180723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -295,7 +323,8 @@
     <MESSAGE value="Optimizations and code cleanup" />
     <MESSAGE value="Added datasets" />
     <MESSAGE value="Latest version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Latest version" />
+    <MESSAGE value="final final ;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="final final ;)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -341,40 +370,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Network_4.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Network_3.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Network_2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="240">
+          <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java">
+    <entry file="file://$PROJECT_DIR$/Network_5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="82" column="29" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2791#2792#0" expanded="true" />
-            <element signature="e#2819#2820#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1425">
+          <caret line="95" column="275" selection-start-line="95" selection-start-column="275" selection-end-line="95" selection-end-column="275" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_6.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2865">
+          <caret line="191" column="659" selection-start-line="191" selection-start-column="659" selection-end-line="191" selection-end-column="659" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_7.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="383" column="1429" selection-start-line="383" selection-start-column="1429" selection-end-line="383" selection-end-column="1429" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_8.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="767" column="2964" selection-start-line="767" selection-start-column="2964" selection-end-line="767" selection-end-column="2964" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/MaxFlow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="190" column="25" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="25" />
+        <state relative-caret-position="978">
+          <caret line="199" column="46" selection-start-line="199" selection-start-column="46" selection-end-line="199" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7666#7667#0" expanded="true" />
-            <element signature="e#7701#7702#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/suresh/algo/Graph/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="82" column="29" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Network_4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="133" selection-start-line="47" selection-start-column="133" selection-end-line="47" selection-end-column="133" />
         </state>
       </provider>
     </entry>
