@@ -164,7 +164,7 @@ public class MaxFlow {
     }
 
     // Find child nodes
-    private boolean depthFirst(int source, int sink, int[] adjacents) {
+    private boolean breadthFirst(int source, int sink, int[] adjacents) {
         //Initiate a linkedlist
         Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[graph.getVertices()];
@@ -195,7 +195,7 @@ public class MaxFlow {
     private int fordFulk(int source, int sink) throws InvalidNodeException, InvalidCapacityException {
         int[] nodes = new int[graph.getVertices()];
         maxFlow = 0;
-        while (depthFirst(source, sink, nodes)) {
+        while (breadthFirst(source, sink, nodes)) {
             float minPathCapacity = Float.MAX_VALUE;
             //Get the minimum capacity of a path
             for (int i = sink; i != source; i = nodes[i]) {
