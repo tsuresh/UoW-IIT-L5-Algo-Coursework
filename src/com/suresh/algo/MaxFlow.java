@@ -1,5 +1,12 @@
 package com.suresh.algo;
 
+
+/*
+Name: Suresh Peiris
+Student ID: 2018435
+UoW ID: w1722124
+ */
+
 import com.suresh.algo.Exceptions.InvalidCapacityException;
 import com.suresh.algo.Exceptions.InvalidNodeException;
 import com.suresh.algo.Graph.Graph;
